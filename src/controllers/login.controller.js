@@ -22,7 +22,8 @@ const sendUserId = async (req, res) =>{
             if(isValidated){
                 res.cookie("uid",user._id)  //set user id cookie
                 return res.status(200).json({
-                    uid:user._id     //mongodb id field
+                    uid:user._id,     //mongodb id field
+                    userdata:user
                 })
 
             }

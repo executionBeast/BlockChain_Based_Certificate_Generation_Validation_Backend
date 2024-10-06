@@ -4,7 +4,7 @@ import { argonHashPassword } from "../utils/hashPassword.js";
 
 const createUser = async (req, res)=>{
     try{
-        const {username, firstname, middlename, lastname, email, password, phone} = req.body;
+        const {username, firstname, middlename, lastname, email, password, phone, usertype} = req.body;
         const hashedPassword = await argonHashPassword(password);
         // console.log("hashedPassword -->",hashedPassword)
         const userdata = await User({
@@ -14,7 +14,8 @@ const createUser = async (req, res)=>{
             lastname,
             email,
             phone,
-            password:hashedPassword
+            password:hashedPassword,
+            usertype
         })
         await userdata.save()    //async task of save() or create()
         // console.log(userdata)
@@ -22,7 +23,7 @@ const createUser = async (req, res)=>{
 
     }catch(err){
         //USE ERROR HANDLER FROM UTILS LATER TO LOG AND SEND ERROR MSG AS JSON
-        res.json({
+        res.status(400).json({
             message:"Error Ocurred",
             error:JSON.stringify(err)
         })

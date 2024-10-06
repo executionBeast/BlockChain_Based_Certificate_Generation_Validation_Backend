@@ -31,6 +31,11 @@ const userSchema = new mongoose.Schema({
         required:true,
         unique:true
     },
+    usertype:{
+        type:String,
+        enum:['student','issuer'],
+        required:true
+    },
     isEmailVerified:{
         type:Boolean,
         default:false
