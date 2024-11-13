@@ -24,7 +24,7 @@ import connectDB from "./src/database/connection.js";
 
 //Initialization
 const app = express();
-const PORT=process.env.PORT || 8000;
+const PORT=process.env.PORT || 4000;
 const MONGO_URI = process.env.MONGO_URI;
 console.log("MONGO_URI __>",MONGO_URI);
 
@@ -50,5 +50,5 @@ app.get('/',(req,res)=>{
 app.use("/api",router)  //router
 
 app.listen(PORT,()=>{
-    console.log(`Server Listening...! http://localhost:${8000}`)
+    console.log(`Server Listening...! http://localhost:${PORT}`)
 })
