@@ -3,13 +3,14 @@ import express from "express";
 import cors from "cors";
 
 import dotenv from "dotenv";
-//Imoprt and Execute ENV as early as possible after import
-// dotenv.config({
-//     path:'.env'
-// })
+// Imoprt and Execute ENV as early as possible after import
+
 dotenv.config({
-    path:'.local.env'
+    path:'.env'
 })
+// dotenv.config({
+//     path:'.local.env'
+// })
 
 import router from "./src/routes/routes.js";
 import morgan from "morgan";
