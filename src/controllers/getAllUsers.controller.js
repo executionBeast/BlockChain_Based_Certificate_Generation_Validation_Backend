@@ -3,7 +3,7 @@ import User from "../models/user.models.js";
 const getAllUsers = async (req,res)=>{
     try{
         const userdata = await User.find({usertype:'student'})
-        console.log(userdata)
+        console.log("Users Data is --> ",userdata)
         res.status(200).json(userdata);
 
     }
