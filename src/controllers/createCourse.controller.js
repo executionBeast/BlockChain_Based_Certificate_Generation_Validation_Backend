@@ -2,10 +2,11 @@ import Course from "../models/course.models.js";
 
 const createCourse = async (req,res) => {
     try{
-        const {issuerid, title, certitype} = req.body;
+        const {issuerid, issuername, title, certitype} = req.body;
         console.log(req.body)
         const course = Course({
             issuerid,
+            issuername,
             title,
             certitype
         })

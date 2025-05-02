@@ -6,6 +6,10 @@ const courseSchema = new mongoose.Schema({
         ref:'Issuer',
         required:true
     },
+    issuername:{
+        type:String,
+        required:true,
+    },
     title:{
         type:String,
         required:true

@@ -9,7 +9,7 @@ import dotenv from "dotenv";
 //     path:'.env'
 // })
 dotenv.config({
-    path:'.local.env'
+    path:'.env'
 })
 
 import router from "./src/routes/routes.js";
