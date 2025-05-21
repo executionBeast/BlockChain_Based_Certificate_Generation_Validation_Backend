@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const courseSchema = new mongoose.Schema({
     issuerid:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:'Issuer',
+        ref:'User',
         required:true
     },
     issuername:{
