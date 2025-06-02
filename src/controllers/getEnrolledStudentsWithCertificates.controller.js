@@ -6,7 +6,7 @@ import mongoose, { get } from "mongoose";
 
 const getEnrolledStudentsWithCertificate = async (req, res) => {
     try {
-        // Step 1: Get all enrollments
+        // Step 1: Get all  enrollments
         const enrollments = await CourseEnrolled.find(); // [{studentid, courseid}, ...]
 
         // Step 2: Extract unique student IDs
@@ -40,7 +40,7 @@ const getEnrolledStudentsWithCertificate = async (req, res) => {
                     email: student.email,
                     phone: student.phone,
                     courseEnrolled: course.title,
-                    issuedCertificate: cert ? cert.certificateurl : "Not Issued"
+                    issuedCertificate: cert ? cert.certificatecid : "Not Issued"
                 });
             }
         });

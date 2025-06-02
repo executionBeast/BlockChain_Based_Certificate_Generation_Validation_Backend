@@ -4,7 +4,7 @@ import { argonHashPassword } from "../utils/hashPassword.js";
 
 const createUser = async (req, res)=>{
     try{
-        const {username, firstname, middlename, lastname, email, password, phone, usertype} = req.body;
+        const {username, firstname, middlename, lastname, email, password, phone, usertype, isEmailVerified, isPhoneVerified} = req.body;
         const hashedPassword = await argonHashPassword(password);
         // console.log("hashedPassword -->",hashedPassword)
         const userdata = await User({
@@ -15,7 +15,10 @@ const createUser = async (req, res)=>{
             email,
             phone,
             password:hashedPassword,
-            usertype
+            usertype,
+            isEmailVerified,
+            isPhoneVerified
+
         })
         await userdata.save()    //async task of save() or create()
         // console.log(userdata)

@@ -11,12 +11,15 @@ import { getEnrolledStudentIDs } from "../controllers/getEnrolledStudents.contro
 import issueCertificate from "../controllers/issueCertificate.controller.js";
 import getIssuedCertificates from "../controllers/getIssuedCertificates.js";
 import getEnrolledStudentsWithCertificate from "../controllers/getEnrolledStudentsWithCertificates.controller.js";
+import getCertificates from "../controllers/getCertificates.controller.js";
+import sendEmailOTP from "../controllers/sendEmailOTP.js";
 //USER (student)
 router.post("/user",createUser)
 router.post("/login",sendUserId)
 router.get("/users",getAllUsers)
 router.post("/course-enrollment", courseEnrollment)
 router.get("/get-enrolled-students", getEnrolledStudentsData)
+router.get("/get-certificates/:studentid", getCertificates)
 // router.get("/get-enrolled-students", getEnrolledStudentIDs)  //check IDs
 
 
@@ -26,10 +29,11 @@ router.post("/course",createCourse)
 router.get("/course",getCourse)
 // router.post("/login",sendUserId)
 router.post("/issue-certificate", issueCertificate)
+// router.put("update-certificate", updateCertificate)
 
 router.get("/issued-certificates", getIssuedCertificates)
 router.get("/get-enrolled-students-certificates", getEnrolledStudentsWithCertificate)
-
+router.post("/send-otp", sendEmailOTP)
 // console.log(router)
 
 export default router;

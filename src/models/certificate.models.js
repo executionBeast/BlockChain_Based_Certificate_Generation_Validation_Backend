@@ -1,7 +1,10 @@
 import mongoose from "mongoose";
 
 const certificateSchema = new mongoose.Schema({
-
+    _id: {
+        type: String,
+        required: true
+        },
     issuerid:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'User',
@@ -24,12 +27,13 @@ const certificateSchema = new mongoose.Schema({
     studentid:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'User',
+        required:true
     },
     studentname:{
         type:String,
         required:true
     },
-    certificateurl:{
+    certificatecid:{
         type:String,
         required:true
     }
@@ -38,7 +42,10 @@ const certificateSchema = new mongoose.Schema({
 
 const Certificate = mongoose.model("Certificate",certificateSchema);
 export default Certificate;
-
+//  certificateurl:{
+//         type:String,
+//         required:true
+//     }
 
 // studentid:{
 //     type:mongoose.Schema.Types.ObjectId,

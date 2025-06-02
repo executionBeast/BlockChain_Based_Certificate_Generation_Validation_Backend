@@ -3,7 +3,7 @@ import Course from "../models/course.models.js";
 const getCourse = async(req,res)=>{
     try{
         const {issuerid} = req.query;
-        // console.log(" QUERY ID ",req.query,id)
+        console.log(" QUERY ID ",req.query.issuerid)
         if(issuerid){
             const courseData = await Course.find({issuerid:issuerid});
             console.log(courseData)

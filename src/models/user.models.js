@@ -29,7 +29,6 @@ const userSchema = new mongoose.Schema({
     password:{
         type:String,
         required:true,
-        unique:true
     },
     usertype:{
         type:String,
@@ -38,11 +37,14 @@ const userSchema = new mongoose.Schema({
     },
     isEmailVerified:{
         type:Boolean,
-        default:false
+        default:false,
+        required:true
     },
     isPhoneVerified:{
         type:Boolean,
-        default:false
+        default:false,
+        required:true
+
     }
 
 },
