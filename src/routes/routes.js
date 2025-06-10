@@ -13,6 +13,7 @@ import getIssuedCertificates from "../controllers/getIssuedCertificates.js";
 import getEnrolledStudentsWithCertificate from "../controllers/getEnrolledStudentsWithCertificates.controller.js";
 import getCertificates from "../controllers/getCertificates.controller.js";
 import sendEmailOTP from "../controllers/sendEmailOTP.js";
+import verifyCertificate from "../controllers/verifyCertificate.controller.js";
 //USER (student)
 router.post("/user",createUser)
 router.post("/login",sendUserId)
@@ -30,6 +31,7 @@ router.get("/course",getCourse)
 // router.post("/login",sendUserId)
 router.post("/issue-certificate", issueCertificate)
 // router.put("update-certificate", updateCertificate)
+router.get("/verify-certificate/:certificateid", verifyCertificate)
 
 router.get("/issued-certificates", getIssuedCertificates)
 router.get("/get-enrolled-students-certificates", getEnrolledStudentsWithCertificate)
